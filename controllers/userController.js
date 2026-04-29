@@ -7,7 +7,7 @@ export const createUser = (req, res) => {
         return res.status(400).json({ error: "Invalid input" });
     }
 
-    User.findOne().sort({ id: -1 })   // get last inserted user
+    User.findOne().sort({ id: -1 })  
         .then(lastUser => {
             const newId = lastUser ? lastUser.id + 1 : 1;
 
